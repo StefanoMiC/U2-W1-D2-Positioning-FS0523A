@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Relative</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            min-height: 70vh;
+            margin-inline: auto;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        .aqua {
+            background-color: aquamarine
+        }
+
+        .coral {
+            background-color: coral;
+        }
+
+        .antique {
+            background-color: antiquewhite;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            position: absolute;
+        }
+
+        .box-first {
+            background-color: aqua;
+            right: 0;
+            bottom: 0;
+        }
+
+        .box span {
+            background-color: red;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: -20px;
+            left: -25px;
+        }
+
+        .box span svg {
+            position: absolute;
+            inset: 0;
+            margin: auto;
+        }
+
+        .p-20 {
+            padding: 20px;
+        }
+
+        .img-wrapper {
+            position: relative;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            overflow: hidden;
+        }
+
+        .img-wrapper::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient(to bottom, transparent 70%, #00000052);
+        }
+
+        .card {
+            display: inline-block;
+            width: 300px;
+            border: 1px solid rgb(173, 173, 173);
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .card img {
+            width: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            display: block;
+        }
+
+        .card h3 {
+            margin: 0;
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            line-height: 0.8;
+            color: white;
+            font-family: arial;
+            FONT-WEIGHT: 900;
+            font-size: 32px;
+            z-index: 1;
+        }
+
+        .card p {
+            margin-top: 0;
+        }
+
+        .card .card-body {
+            padding: 1rem;
+        }
+
+        .badge {
+            background-color: palevioletred;
+            padding: .25rem;
+            border-top-left-radius: 6px;
+            border-bottom-left-radius: 6px;
+            color: white;
+            position: absolute;
+            top: 20px;
+            right: 0;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="box box-first">
+            <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-airplane" viewBox="0 0 16 16">
+                    <path
+                        d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Zm.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1c-.213 0-.458.158-.678.599Z" />
+                </svg>
+            </span>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quae officiis natus ullam laborum! Rem
+            ex blanditiis accusantium distinctio nulla sequi, corporis illum hic! Suscipit sequi quas voluptate esse
+            vitae.</p>
+    </div>
+
+
+    <div class="container p-20">
+
+        <div class="card">
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1697544663357-24835b6f680b?auto=format&fit=crop&q=80&w=1933&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <h3>Title</h3>
+            </div>
+
+            <div class="card-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam doloribus nihil, maxime explicabo,
+                    repellat
+                    voluptates possimus animi beatae, distinctio obcaecati odit consectetur earum architecto. Quidem
+                    praesentium
+                    tempora voluptas amet nesciunt?
+
+                </p>
+                <button>click me</button>
+            </div>
+            <span class="badge">-20%</span>
+        </div>
+        <div class="card">
+            <div class="img-wrapper">
+                <img src="https://images.unsplash.com/photo-1515511856280-7b23f68d2996?auto=format&fit=crop&q=80&w=2074&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <!-- <img src="https://plus.unsplash.com/premium_photo-1664117436589-afae7b115cd4?auto=format&fit=crop&q=80&w=2070&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt=""> -->
+                <h3>Title</h3>
+            </div>
+
+            <div class="card-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam doloribus nihil, maxime explicabo,
+                    repellat
+                    voluptates possimus animi beatae, distinctio obcaecati odit consectetur earum architecto. Quidem
+                    praesentium
+                    tempora voluptas amet nesciunt?
+
+                </p>
+                <button>click me</button>
+            </div>
+            <span class="badge">-20%</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box aqua" style="z-index: 3">1</div>
+        <div class="box coral" style="left: 80px; top: 100px;">2</div>
+        <div class="box antique" style="left: -70px; top: -30px;">3</div>
+    </div>
+</body>
+
+</html>

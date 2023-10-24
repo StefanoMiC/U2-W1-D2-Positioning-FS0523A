@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning</title>
+
+    <style>
+        .container {
+            max-width: 900px;
+            margin-inline: auto;
+            border: 2px solid black;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .flowroot {
+            display: flow-root;
+        }
+
+        header {
+            background-color: palevioletred;
+            padding-block: 1rem;
+        }
+
+        header ul {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        header ul li {
+            display: inline-block;
+        }
+
+        img {
+            float: left;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+        }
+
+        .float-left {
+            float: left;
+
+        }
+
+        footer {
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- un clearfix prevede un elemento di blocco come ultimo elemento di un contenitore che, resettando i float, faccia da
+    scudo per permettere al contenitore di capire quanto dovrà essere alto. in questo modo includerà elementi fluttuanti
+    all'interno del contenitore che normalmente finirebbero per uscire-->
+    <div class="container clearfix">
+        <header>
+            <ul>
+                <li>home</li>
+                <li>contatti</li>
+                <li>about us</li>
+            </ul>
+        </header>
+        <img src="https://images.unsplash.com/photo-1682687980961-78fa83781450?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="desert" height="400">
+        <!-- <img src="https://images.unsplash.com/photo-1682687980961-78fa83781450?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="desert" height="400">
+        <img src="https://images.unsplash.com/photo-1682687980961-78fa83781450?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="desert" height="400"> -->
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos maxime accusantium, dolorum officia excepturi
+            aut id sit quasi. Consequatur, deleniti voluptate modi laborum expedita itaque aut delectus totam ipsa
+            magnam!
+            Quas, esse quia error nisi architecto maxime, eos assumenda id velit fugiat aliquid, porro dolore! Optio, id
+            provident unde sed cupiditate dolorem officiis veniam libero odit facilis quae, nihil quos.
+            Sequi, sunt in! Officiis, harum atque corrupti temporibus quos mollitia. Amet nemo distinctio odit harum
+            doloremque beatae illum, minus voluptate. Voluptatum neque reprehenderit veritatis quod consequatur quas
+            vero exercitationem aliquid.
+            Minus rem inventore adipisci, repellat molestiae neque vel aperiam, provident soluta perferendis ipsam!
+            Facilis natus reiciendis sapiente ipsam voluptatem, asperiores quis porro iste assumenda accusantium, eum
+            obcaecati, alias dolorem incidunt.
+        </p>
+
+        <footer>
+            Epicode 2023
+        </footer>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo, odit sunt. Ullam animi nisi temporibus
+            expedita, provident maiores eaque doloribus necessitatibus veniam a libero sed nostrum placeat? Repellendus,
+            libero ad.</p>
+
+    </div>
+
+
+    <!-- in questo esempio l'immagine con float right è l'unico elemento del container, se il container non avesse un qualche
+     clearfix l'immagine uscirebbe fuori in quanto il container non la calcola come elemento nel suo contesto -->
+    <div class="container clearfix">
+        <img src="https://images.unsplash.com/photo-1682687980961-78fa83781450?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="desert" height="400" style="float: right;">
+    </div>
+
+
+    <!-- in questo esempio abbiamo usato una nuova proprietà display: flow-root; che crea un "nuovo contesto di formattazione di blocco" 
+        e permette di calcolare gli elementi in float come fossero all'interno del contenitore -->
+    <div class="container flowroot">
+        <div class="box float-left" style="background-color: coral;"></div>
+        <div class="box float-left" style="background-color: aquamarine; "></div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, voluptatem! Ullam facere iusto repellendus,
+            unde quam eos doloribus cupiditate id amet nemo asperiores at tempora, harum reprehenderit voluptatem
+            corporis dolorum?</p>
+    </div>
+
+</body>
+
+</html>

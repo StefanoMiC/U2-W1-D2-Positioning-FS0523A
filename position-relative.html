@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Relative</title>
+    <style>
+        .container {
+            max-width: 900px;
+            margin-inline: auto;
+            border: 2px solid black;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+            position: relative;
+            /*lo spazio occupato da un elemento spostato con position relative viene mantenuto riservato per l'elemento stesso */
+            /* si crea un'area vuota */
+            top: 100px;
+            left: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="box"></div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos quae officiis natus ullam laborum! Rem
+            ex blanditiis accusantium distinctio nulla sequi, corporis illum hic! Suscipit sequi quas voluptate esse
+            vitae.</p>
+    </div>
+</body>
+
+</html>
